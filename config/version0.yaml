@@ -1,0 +1,36 @@
+---
+train_config:
+  GPU: 'True'
+  device: 'cuda:0'
+  seed: 0
+  exp_name: 'model'
+  batch_size: 100 # Sample
+  actor_lr: 0.001
+  critic_lr: 0.001
+  epochs: 300 # Total Training Episode
+  steps_per_epoch: 4000
+  adjust_temperature: true
+  target_entropy: None
+  gamma: 0.99
+  alpha: 0.2
+  poylak: 0.95
+  update_step: 1000
+  update_every: 50
+  max_ep_len: 1000
+  start_steps: 10000
+  save_freq: 1
+  eval_episode: 20
+
+  obs_dim: 3
+  act_dim: 3
+  act_limit: 1
+  buffer_size: 1000000
+
+demo_config:
+  load_demo_data: true
+  demo_dir: './data/demo_trained_rl'
+  demo_buf_dir:  './result/sacfd/model/demo_buffer.pt' # 'None' or './result/sacfd/model/demo_buffer.pt'
+  demo_N: 100 # manually fill in
+  load_N: 100  # manually fill in
+  traj_len: 500
+  sim_demo_rat: 0.9
