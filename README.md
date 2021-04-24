@@ -1,3 +1,0 @@
-# Efficient learning with demonstrations
-
-
